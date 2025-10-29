@@ -1,0 +1,302 @@
+[
+  {
+    "resource_key": "C05_21",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_22",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_23",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_24",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_22",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_23",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_24",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_25",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_binary_tree",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_binary_tree_height",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_delete",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_dlinkedlist_impl",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_dlinkedlist_intro",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_intro_course",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_queue_basic",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_basic",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_25",
+    "form_type": 4,
+    "correct_rate_change": 0.7965947985649109,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_27",
+    "form_type": 4,
+    "correct_rate_change": 0.7965947985649109,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_28",
+    "form_type": 4,
+    "correct_rate_change": 0.7965487837791443,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_26",
+    "form_type": 4,
+    "correct_rate_change": 0.7965486645698547,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_21",
+    "form_type": 4,
+    "correct_rate_change": 0.7965025901794434,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_5",
+    "form_type": 1,
+    "correct_rate_change": 0.6412072777748108,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_6",
+    "form_type": 1,
+    "correct_rate_change": 0.6412072777748108,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_7",
+    "form_type": 1,
+    "correct_rate_change": 0.6412072777748108,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_8",
+    "form_type": 1,
+    "correct_rate_change": 0.6412072777748108,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_9",
+    "form_type": 1,
+    "correct_rate_change": 0.6412072777748108,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_6",
+    "form_type": 1,
+    "correct_rate_change": 0.6412072777748108,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C08_9",
+    "form_type": 1,
+    "correct_rate_change": 0.641207218170166,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_1",
+    "form_type": 1,
+    "correct_rate_change": 0.6411612033843994,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_9",
+    "form_type": 1,
+    "correct_rate_change": 0.6411612033843994,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_2",
+    "form_type": 1,
+    "correct_rate_change": 0.6411611437797546,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_3",
+    "form_type": 1,
+    "correct_rate_change": 0.6411611437797546,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_5",
+    "form_type": 1,
+    "correct_rate_change": 0.6411611437797546,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_1",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_11",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_12",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_13",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_14",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_15",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_2",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_3",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_4",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_8",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_9",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_13",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_4",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_6",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_7",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C08_2",
+    "form_type": 1,
+    "correct_rate_change": 0.641115128993988,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_5",
+    "form_type": 1,
+    "correct_rate_change": 0.6411150693893433,
+    "is_use": 0
+  }
+]

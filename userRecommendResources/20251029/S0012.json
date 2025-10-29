@@ -1,0 +1,302 @@
+[
+  {
+    "resource_key": "C06_20",
+    "form_type": 5,
+    "correct_rate_change": 0.27950060367584206,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_19",
+    "form_type": 5,
+    "correct_rate_change": 0.2794338464736936,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_1",
+    "form_type": 5,
+    "correct_rate_change": 0.27926814556121804,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_11",
+    "form_type": 5,
+    "correct_rate_change": 0.27926814556121804,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_12",
+    "form_type": 5,
+    "correct_rate_change": 0.27926814556121804,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_13",
+    "form_type": 5,
+    "correct_rate_change": 0.27926814556121804,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_14",
+    "form_type": 5,
+    "correct_rate_change": 0.27926814556121804,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_15",
+    "form_type": 5,
+    "correct_rate_change": 0.27926814556121804,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_16",
+    "form_type": 5,
+    "correct_rate_change": 0.27926814556121804,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_3",
+    "form_type": 5,
+    "correct_rate_change": 0.2792037725448606,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_4",
+    "form_type": 5,
+    "correct_rate_change": 0.2792037725448606,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_20",
+    "form_type": 5,
+    "correct_rate_change": 0.2792037725448606,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_18",
+    "form_type": 5,
+    "correct_rate_change": 0.2790046930313108,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_10",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_2",
+    "form_type": 5,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_5",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_6",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_7",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_8",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_9",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_1",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_10",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_11",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_12",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_13",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_14",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_15",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_16",
+    "form_type": 4,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_17",
+    "form_type": 4,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_18",
+    "form_type": 4,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_19",
+    "form_type": 4,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_2",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_20",
+    "form_type": 4,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_21",
+    "form_type": 4,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_22",
+    "form_type": 4,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_23",
+    "form_type": 4,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_24",
+    "form_type": 4,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_25",
+    "form_type": 4,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_3",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_4",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_5",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_6",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_7",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_8",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_9",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_1",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_10",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_11",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_12",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_13",
+    "form_type": 1,
+    "correct_rate_change": -1.0,
+    "is_use": 0
+  }
+]

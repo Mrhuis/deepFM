@@ -1,0 +1,35 @@
+{
+  "cat_dims": {
+    "resource_form": 8,
+    "resource_knowledges": 2,
+    "resource_tags": 2,
+    "is_first_submit_24h": 2,
+    "is_complete": 2,
+    "is_correct": 2,
+    "is_view_analysis": 2,
+    "is_pause": 2,
+    "is_replay": 2
+  },
+  "continuous_dim": 206,
+  "categorical_cols": [
+    "resource_form",
+    "resource_knowledges",
+    "resource_tags",
+    "is_first_submit_24h",
+    "is_complete",
+    "is_correct",
+    "is_view_analysis",
+    "is_pause",
+    "is_replay"
+  ],
+  "continuous_cols": [
+    "knowledge_accuracy",
+    "knowledge_total_count",
+    "resource_preference",
+    "post_3d_correct_rate",
+    "post_practice_count",
+    "watch_rate",
+    "active_days",
+    "resource_time"
+  ]
+}
