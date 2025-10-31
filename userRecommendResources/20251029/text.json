@@ -1,0 +1,38 @@
+[
+  {
+    "resource_key": "C01_5",
+    "form_type": 1,
+    "correct_rate_change": 1.0,
+    "is_use": 1
+  },
+  {
+    "resource_key": "J01",
+    "form_type": 2,
+    "correct_rate_change": 1.0,
+    "is_use": 1
+  },
+  {
+    "resource_key": "T01",
+    "form_type": 3,
+    "correct_rate_change": -0.2664761543273927,
+    "is_use": 1
+  },
+  {
+    "resource_key": "M_dlinkedlist_impl",
+    "form_type": 7,
+    "correct_rate_change": -0.4731653928756715,
+    "is_use": 1
+  },
+  {
+    "resource_key": "C02_16",
+    "form_type": 4,
+    "correct_rate_change": -0.8391803801059724,
+    "is_use": 1
+  },
+  {
+    "resource_key": "C05_17",
+    "form_type": 6,
+    "correct_rate_change": -1.0,
+    "is_use": 1
+  }
+]

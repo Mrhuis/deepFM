@@ -93,11 +93,18 @@ class ModelPredictor:
             model_path = os.path.join(model_dir, model_filename)
             
         if os.path.exists(model_path):
-
             self.load_model(model_path)
-
         else:
-            print(f"警告：未找到模型文件 {model_path}，将使用随机初始化的模型权重")
+            print(f"警告：未找到模型文件 {model_path}，将在 {TRAINING_MODELS_DIR} 目录中查找最新模型...")
+            # 在模型目录中查找最新日期命名的模型文件
+            model_files = glob.glob(os.path.join(model_dir, "*.pth"))
+            if model_files:
+                # 按文件名排序，获取最新的模型文件
+                latest_model_file = max(model_files, key=os.path.getctime)
+                print(f"使用最新模型文件: {latest_model_file}")
+                self.load_model(latest_model_file)
+            else:
+                print(f"警告：{TRAINING_MODELS_DIR} 目录中未找到任何模型文件，将使用随机初始化的模型权重")
     
     def load_model(self, model_path: str):
         """

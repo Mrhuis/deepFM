@@ -190,6 +190,7 @@ def generate_resource_info_json(output_path: str = None):
 def get_user_knowledge_stats(user_key: str, current_time: datetime) -> Dict[str, List]:
     """
     根据用户key和指定时间，获取该用户在指定时间前30天内的知识点正确率和总题数列表
+    其包含所有知识点的正确概率，就算用户没做到相关知识点的题，也要计算出该知识点的正确率，不然缺少训练特征巨麻烦
 
     方法逻辑：
         getModel. 关联user_knowledge_stats_20d(t1)和knowledges(t2)，筛选条件为：
@@ -302,6 +303,8 @@ def get_user_knowledge_stats(user_key: str, current_time: datetime) -> Dict[str,
 def get_user_resource_preference(user_key: str, current_time: datetime) -> dict:
     """
     根据用户key和指定时间，获取该用户在指定时间前30天内的资源偏好比例列表及资源映射哈希表
+
+    查询该用户该时段所有资源偏好，就算这段时间没有交互行为，其行为记录表没有记录也要得到，不然特征缺失。
 
     方法逻辑：
         getModel. 关联user_resource_preference_7d(t1)和resource_form(t3)，筛选条件为：
