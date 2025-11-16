@@ -14,7 +14,7 @@ TRAINING_SETS_DIR = "trainingSets"
 TRAINING_MODELS_DIR = "models"
 # 模型特征配置文件位置
 MODEL_CONFIG_DIR = "featureInfoConfigs"
-# 用户动态特征文件存贮位置
+# 用户滞后暂时用特征文件存贮位置
 USER_FEATURE_DIR = "userFeatures"
 # 内容静态特征文件存贮位置
 CONTENT_FEATURE_DIR = "contentFeatures"

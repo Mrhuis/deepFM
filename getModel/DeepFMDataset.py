@@ -45,24 +45,31 @@ class DeepFMDataset(torch.utils.data.Dataset):
         self.continuous_std = []   # 保存每列的标准差
         
         for col in CONTINUOUS_COLS:
+            # 取出二维数组中的一列数据为一维数组By列名
             col_data = self.df[col].fillna("").apply(
+                # TODO:处理一维数组的每个元素（字符串"XX，XX，XX...."），把其变成数组，并整体把非空值向左对齐，如果中间有空值
                 lambda x: [float(val) for val in x.split(",") if val.strip()] if x.strip() else []
             )
+            # 把表示此列的二维数组的每一行的长度进行查看，迭代出最长值。
             max_len = max(len(vals) for vals in col_data) if col_data.any() else 1
+            # 对表示此列的二维数组的每一行进行追平，以最长行为目标，尾部加0.0，最后赋给np列表
             padded = np.array([vals + [0.0] * (max_len - len(vals)) for vals in col_data])
             
             # 计算并保存均值和标准差
             col_mean = padded.mean()
             col_std = padded.std()
+            # 向全局属性中追加均值和标准差
             self.continuous_mean.append(col_mean)
             self.continuous_std.append(col_std)
             
             # 归一化：如果标准差为0（所有值相同），只减去均值
             if col_std == 0:
+                # 利用广播机制，将矩阵的每一行的数值都减去对应行总数值的均值
                 padded = padded - col_mean
             else:
                 padded = (padded - col_mean) / col_std
             continuous_list.append(padded)
+        # 水平矩阵拼接
         continuous_matrix = np.hstack(continuous_list)
 
         # 2. 处理类别特征
@@ -74,14 +81,54 @@ class DeepFMDataset(torch.utils.data.Dataset):
             )
             max_len = max(len(vals) for vals in col_data) if col_data.any() else 1
             padded = np.array([vals + [0] * (max_len - len(vals)) for vals in col_data])
-            max_val = padded.max() if len(padded) > 0 else 0
-            cat_dims[col] = int(max_val + 1)  # 索引从0开始，维度需+1
+            # 处理三种类型的类别特征
+            # 1. 简单的 0/1 类别
+            # 2. 二进制字符串形式（如"000010001"）
+            # 3. 正常的多类别标签（如 1/2/3/4/5）
+            
+            # 找到数据中的最大值和最小值
+            max_val = 0
+            min_val = 0
+            for vals in col_data:
+                for val in vals:
+                    if val > max_val:
+                        max_val = val
+                    if val < min_val:
+                        min_val = val
+            
+            # 确保最小值为0，这是嵌入层索引的基本要求
+            if min_val < 0:
+                raise ValueError(f"类别特征 {col} 中存在负数索引: {min_val}")
+            
+            # 确定类别数的策略：
+            # 如果max_val > 1，说明是正常的多类别标签
+            # 如果max_len > 1且max_val <= 1，说明是二进制字符串形式
+            # 如果max_len = 1且max_val <= 1，说明是简单的0/1类别
+            if max_val > 1:
+                # 正常的多类别标签，类别数是最大值+1（因为从0开始计数）
+                cat_dim = int(max_val + 1)
+            elif max_len > 1 and max_val <= 1:
+                # 二进制字符串形式，类别数是位数+1（考虑到0索引）
+                cat_dim = int(max_len + 1)
+            else:
+                # 简单的0/1类别，类别数是2
+                cat_dim = 2
+                
+            # 打印调试信息
+            print(f"特征 '{col}': max_len={max_len}, max_val={max_val}, min_val={min_val}, 计算维度={cat_dim}")
+                
+            # 将每个类别特征的维度存入字典（种类个数）
+            cat_dims[col] = cat_dim
+            # 处理后的数据存入字典
             categorical_dict[col] = padded
 
         return continuous_matrix, categorical_dict, cat_dims
 
     def _preprocess_target(self) -> Tuple[np.ndarray, float, float]:
         """处理目标变量"""
+
+        # 第三方库列表数据类型装第三方库np的列表数据类型
+        # 把一维数组变成二维数组
         target_data = self.df[TARGET_COL].fillna("0").apply(
             lambda x: float(x) if x.strip() else 0.0
         ).values.reshape(-1, 1)
@@ -103,7 +150,8 @@ class DeepFMDataset(torch.utils.data.Dataset):
 
         target_folder_path = os.path.join(base_dir, MODEL_CONFIG_DIR)
         feature_info_path = os.path.join(target_folder_path, feature_info_filename)
-        
+
+        # 保持数据预处理时，用于特征归一化的信息
         feature_info = {
             "cat_dims": self.cat_dims,
             "continuous_dim": self.continuous_dim,
@@ -123,6 +171,8 @@ class DeepFMDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, idx: int) -> Tuple[torch.Tensor, Dict[str, torch.Tensor], torch.Tensor]:
         """返回：连续特征、类别特征字典、目标变量"""
+
+        # 全都转为张量输出
         continuous = torch.tensor(
             self.continuous_data[idx], dtype=torch.float32, device=DEVICE
         )
