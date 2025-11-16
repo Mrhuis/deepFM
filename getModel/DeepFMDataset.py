@@ -132,7 +132,8 @@ class DeepFMDataset(torch.utils.data.Dataset):
         target_data = self.df[TARGET_COL].fillna("0").apply(
             lambda x: float(x) if x.strip() else 0.0
         ).values.reshape(-1, 1)
-        
+
+
         # 获取目标变量的最小值和最大值，用于预测时的映射
         target_min = float(target_data.min())
         target_max = float(target_data.max())
