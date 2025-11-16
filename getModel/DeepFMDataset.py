@@ -134,6 +134,7 @@ class DeepFMDataset(torch.utils.data.Dataset):
         ).values.reshape(-1, 1)
 
 
+
         # 获取目标变量的最小值和最大值，用于预测时的映射
         target_min = float(target_data.min())
         target_max = float(target_data.max())
