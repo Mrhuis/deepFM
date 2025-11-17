@@ -1,0 +1,57 @@
+{
+  "cat_dims": {
+    "resource_form": 8,
+    "resource_knowledges": 49,
+    "resource_tags": 267,
+    "is_first_submit_24h": 2,
+    "is_complete": 2,
+    "is_correct": 2,
+    "is_view_analysis": 2,
+    "is_pause": 2,
+    "is_replay": 2
+  },
+  "continuous_dim": 206,
+  "categorical_cols": [
+    "resource_form",
+    "resource_knowledges",
+    "resource_tags",
+    "is_first_submit_24h",
+    "is_complete",
+    "is_correct",
+    "is_view_analysis",
+    "is_pause",
+    "is_replay"
+  ],
+  "continuous_cols": [
+    "knowledge_accuracy",
+    "knowledge_total_count",
+    "resource_preference",
+    "post_3d_correct_rate",
+    "post_practice_count",
+    "watch_rate",
+    "active_days",
+    "resource_time"
+  ],
+  "target_min": 0.2,
+  "target_max": 0.4,
+  "continuous_mean": [
+    0.0,
+    0.0,
+    0.0,
+    0.5080763265306123,
+    14.234224489795919,
+    0.7883150000000001,
+    180.0,
+    159.731
+  ],
+  "continuous_std": [
+    0.0,
+    0.0,
+    0.0,
+    0.07118588408264712,
+    2.934995760281373,
+    0.2709553667580696,
+    0.0,
+    330.9066554770393
+  ]
+}

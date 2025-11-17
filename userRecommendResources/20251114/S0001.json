@@ -1,0 +1,302 @@
+[
+  {
+    "resource_key": "C01_10",
+    "form_type": 1,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_10",
+    "form_type": 1,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_16",
+    "form_type": 5,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_17",
+    "form_type": 6,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_19",
+    "form_type": 6,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_25",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_26",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_27",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_28",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_7",
+    "form_type": 1,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_12",
+    "form_type": 1,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_14",
+    "form_type": 1,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_16",
+    "form_type": 5,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_17",
+    "form_type": 5,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_18",
+    "form_type": 6,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_21",
+    "form_type": 4,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C07_17",
+    "form_type": 6,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C07_19",
+    "form_type": 6,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C08_16",
+    "form_type": 5,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "J01",
+    "form_type": 2,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "T01",
+    "form_type": 3,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_adt_intro",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_array_vs_linkedlist",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_binary_tree",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_binary_tree_height",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_basic",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_cpp_impl",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_delete",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_min_max",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_successor",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_validation",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_direct_insertion_sort",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_dlinkedlist_impl",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_dlinkedlist_intro",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_adj_list",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_adj_matrix",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_basic",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_edge_list",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_intro",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_heap_sort",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_intro_course",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_basic",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_cpp_impl",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_delete_any",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_insert_any",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_insert_head",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_print_recursive",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_reverse_iter",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_reverse_recursive",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_merge_sort",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  }
+]

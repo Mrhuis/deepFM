@@ -1,0 +1,302 @@
+[
+  {
+    "resource_key": "C05_16",
+    "form_type": 5,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_17",
+    "form_type": 6,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_19",
+    "form_type": 6,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_16",
+    "form_type": 5,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_17",
+    "form_type": 5,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_18",
+    "form_type": 6,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C08_16",
+    "form_type": 5,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "J01",
+    "form_type": 2,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "T01",
+    "form_type": 3,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_binary_tree",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_binary_tree_height",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_delete",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_dlinkedlist_impl",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_dlinkedlist_intro",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_intro_course",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_queue_basic",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_basic",
+    "form_type": 7,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_reverse_recursive",
+    "form_type": 7,
+    "correct_rate_change": 0.9486184716224668,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_7",
+    "form_type": 1,
+    "correct_rate_change": 0.9192661643028257,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_linkedlist_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.9147791266441343,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_tree_levelorder",
+    "form_type": 7,
+    "correct_rate_change": 0.9075523614883421,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_array_vs_linkedlist",
+    "form_type": 7,
+    "correct_rate_change": 0.8923123478889463,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_delete_any",
+    "form_type": 7,
+    "correct_rate_change": 0.8882672786712644,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_insert_head",
+    "form_type": 7,
+    "correct_rate_change": 0.8825413584709165,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_adt_intro",
+    "form_type": 7,
+    "correct_rate_change": 0.8773602247238157,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_array_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.8771191239356992,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_edge_list",
+    "form_type": 7,
+    "correct_rate_change": 0.8667270541191099,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_reverse_iter",
+    "form_type": 7,
+    "correct_rate_change": 0.8652715086936948,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_cpp_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.8626974821090696,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_paren_match",
+    "form_type": 7,
+    "correct_rate_change": 0.8586673140525816,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_queue_linkedlist_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.8575467467308042,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_print_recursive",
+    "form_type": 7,
+    "correct_rate_change": 0.855454623699188,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_adj_matrix",
+    "form_type": 7,
+    "correct_rate_change": 0.8494098186492918,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_queue_array_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.8454708456993101,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_insert_any",
+    "form_type": 7,
+    "correct_rate_change": 0.840769827365875,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_basic",
+    "form_type": 7,
+    "correct_rate_change": 0.840559124946594,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_tree_basic",
+    "form_type": 7,
+    "correct_rate_change": 0.8306179642677305,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_validation",
+    "form_type": 7,
+    "correct_rate_change": 0.8183844089508054,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_intro",
+    "form_type": 7,
+    "correct_rate_change": 0.814408481121063,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_basic",
+    "form_type": 7,
+    "correct_rate_change": 0.8051670789718626,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_successor",
+    "form_type": 7,
+    "correct_rate_change": 0.7913203239440916,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_infix_to_postfix",
+    "form_type": 7,
+    "correct_rate_change": 0.7845662236213682,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_cpp_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.7797001004219053,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_basic",
+    "form_type": 7,
+    "correct_rate_change": 0.7637045979499815,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_25",
+    "form_type": 4,
+    "correct_rate_change": 0.7165236473083494,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_26",
+    "form_type": 4,
+    "correct_rate_change": 0.7165236473083494,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_27",
+    "form_type": 4,
+    "correct_rate_change": 0.716519773006439,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_21",
+    "form_type": 4,
+    "correct_rate_change": 0.7165045738220213,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_28",
+    "form_type": 4,
+    "correct_rate_change": 0.7164890766143797,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_12",
+    "form_type": 1,
+    "correct_rate_change": 0.6538809537887571,
+    "is_use": 0
+  }
+]

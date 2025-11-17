@@ -1,0 +1,302 @@
+[
+  {
+    "resource_key": "C05_16",
+    "form_type": 5,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_17",
+    "form_type": 6,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "J01",
+    "form_type": 2,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "T01",
+    "form_type": 3,
+    "correct_rate_change": 1.0,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_intro_course",
+    "form_type": 7,
+    "correct_rate_change": 0.9430737495422361,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_binary_tree_height",
+    "form_type": 7,
+    "correct_rate_change": 0.9319828152656553,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_dlinkedlist_intro",
+    "form_type": 7,
+    "correct_rate_change": 0.9307138323783872,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_queue_basic",
+    "form_type": 7,
+    "correct_rate_change": 0.8919252157211301,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_18",
+    "form_type": 6,
+    "correct_rate_change": 0.8741275668144224,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_dlinkedlist_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.7743139266967771,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_binary_tree",
+    "form_type": 7,
+    "correct_rate_change": 0.7553486227989195,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_19",
+    "form_type": 6,
+    "correct_rate_change": 0.7409731745719907,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_basic",
+    "form_type": 7,
+    "correct_rate_change": 0.7309470772743223,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_delete",
+    "form_type": 7,
+    "correct_rate_change": 0.7084504961967466,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_16",
+    "form_type": 5,
+    "correct_rate_change": 0.6918038129806516,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_17",
+    "form_type": 5,
+    "correct_rate_change": 0.6917904019355772,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C08_16",
+    "form_type": 5,
+    "correct_rate_change": 0.6577039957046507,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_7",
+    "form_type": 1,
+    "correct_rate_change": 0.5269591212272642,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_reverse_recursive",
+    "form_type": 7,
+    "correct_rate_change": 0.4998148679733274,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_linkedlist_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.46201807260513283,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_tree_levelorder",
+    "form_type": 7,
+    "correct_rate_change": 0.454298675060272,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_array_vs_linkedlist",
+    "form_type": 7,
+    "correct_rate_change": 0.4369421005249021,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_delete_any",
+    "form_type": 7,
+    "correct_rate_change": 0.43222439289092995,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_insert_head",
+    "form_type": 7,
+    "correct_rate_change": 0.4255385398864744,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_adt_intro",
+    "form_type": 7,
+    "correct_rate_change": 0.41949373483657815,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_array_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.41920405626296975,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_edge_list",
+    "form_type": 7,
+    "correct_rate_change": 0.40708225965499856,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_reverse_iter",
+    "form_type": 7,
+    "correct_rate_change": 0.4053874015808103,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_cpp_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.40238064527511574,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_paren_match",
+    "form_type": 7,
+    "correct_rate_change": 0.3976784348487852,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_queue_linkedlist_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.3963656425476072,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_print_recursive",
+    "form_type": 7,
+    "correct_rate_change": 0.39393764734268166,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_adj_matrix",
+    "form_type": 7,
+    "correct_rate_change": 0.3868855237960813,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_queue_array_impl",
+    "form_type": 7,
+    "correct_rate_change": 0.38227629661560036,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_insert_any",
+    "form_type": 7,
+    "correct_rate_change": 0.3768096566200254,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_basic",
+    "form_type": 7,
+    "correct_rate_change": 0.3765509724617002,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_tree_basic",
+    "form_type": 7,
+    "correct_rate_change": 0.3650550246238706,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_validation",
+    "form_type": 7,
+    "correct_rate_change": 0.351667523384094,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_graph_intro",
+    "form_type": 7,
+    "correct_rate_change": 0.3473148941993711,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_linkedlist_basic",
+    "form_type": 7,
+    "correct_rate_change": 0.33659201860427834,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_12",
+    "form_type": 1,
+    "correct_rate_change": 0.3209636807441709,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_14",
+    "form_type": 1,
+    "correct_rate_change": 0.3209636807441709,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C01_10",
+    "form_type": 1,
+    "correct_rate_change": 0.3209484815597532,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_10",
+    "form_type": 1,
+    "correct_rate_change": 0.3209484815597532,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_successor",
+    "form_type": 7,
+    "correct_rate_change": 0.32052260637283303,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_25",
+    "form_type": 4,
+    "correct_rate_change": 0.3180713653564451,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_26",
+    "form_type": 4,
+    "correct_rate_change": 0.3180713653564451,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_27",
+    "form_type": 4,
+    "correct_rate_change": 0.3180674910545347,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_21",
+    "form_type": 4,
+    "correct_rate_change": 0.3180519938468931,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_28",
+    "form_type": 4,
+    "correct_rate_change": 0.3180364966392515,
+    "is_use": 0
+  }
+]
