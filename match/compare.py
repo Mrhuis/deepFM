@@ -5,7 +5,7 @@ import os
 from typing import Dict
 from getModel.DeepFM import DeepFM
 from config import DEVICE, EMBEDDING_DIM, DNN_HIDDEN, DROPOUT, CONTINUOUS_COLS, CATEGORICAL_COLS
-from config import MODEL_CONFIG_DIR, TRAINING_MODELS_DIR
+from config import MODEL_CONFIG_DIR, TRAINING_MODELS_DIR,USED_MODEL
 from datetime import datetime
 from modelsContainer import TrainingSet
 import glob
@@ -88,9 +88,17 @@ class ModelPredictor:
         # 加载预训练模型权重
         # 如果没有提供模型路径，则尝试使用默认路径
         if not model_path:
-            model_filename = f"{current_date}.pth"
-            model_dir = os.path.join(base_dir, TRAINING_MODELS_DIR)
-            model_path = os.path.join(model_dir, model_filename)
+            # 检查USED_MODEL配置
+            if USED_MODEL == "DEFAULT":
+                # 保持原有逻辑
+                model_filename = f"{current_date}.pth"
+                model_dir = os.path.join(base_dir, TRAINING_MODELS_DIR)
+                model_path = os.path.join(model_dir, model_filename)
+            else:
+                # 使用USED_MODEL作为文件名
+                model_filename = f"{USED_MODEL}.pth"
+                model_dir = os.path.join(base_dir, TRAINING_MODELS_DIR)
+                model_path = os.path.join(model_dir, model_filename)
             
         if os.path.exists(model_path):
             self.load_model(model_path)

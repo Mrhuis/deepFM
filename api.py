@@ -2,10 +2,11 @@ import os
 import sys
 import json
 import logging
+import glob
 from typing import List, Dict, Any
 from datetime import datetime
 from flask import Flask, request, jsonify
-from config import USER_RECOMMEND_RESOURCE_DIR
+from config import USER_RECOMMEND_RESOURCE_DIR, TRAINING_MODELS_DIR
 from match.userResources import generate_single_user_recommendations, get_user_recommendations, mark_resource_as_used,get_user_recommendations_test, reset_user_resources_usage
 
 
@@ -226,6 +227,292 @@ def run_pipeline_immediately():
         return jsonify({
             "success": False,
             "message": f"执行流水线任务时出错: {str(e)}"
+        }), 500
+
+
+# 添加一个新的API端点用于更新配置参数
+@app.route('/config', methods=['PUT'])
+def update_config():
+    """
+    动态更新配置参数
+    
+    Args:
+        JSON对象包含要更新的配置项
+        
+    Returns:
+        JSON格式的响应结果
+    """
+    try:
+        # 获取请求中的JSON数据
+        data = request.get_json()
+        
+        if not data:
+            return jsonify({
+                "success": False,
+                "message": "请求体必须包含JSON数据"
+            }), 400
+            
+        # 定义允许通过API修改的配置项
+        allowed_configs = {
+            "HIGH_MATCHING_CANDIDATE_RESOURCE_COUNT": int,
+            "RECOMMEND_USED_RESOURCES": int,
+            "USED_MODEL": str,
+            "DEFAULT_TRAIN_NUM": int,
+            "BATCH_SIZE": int,
+            "EMBEDDING_DIM": int,
+            "DNN_HIDDEN": list,
+            "DROPOUT": float,
+            "EPOCHS": int,
+            "LR": float
+        }
+            
+        # 导入配置模块
+        import config
+        
+        # 更新配置项
+        updated_configs = []
+        invalid_configs = []
+        
+        for key, value in data.items():
+            # 检查配置项是否允许修改
+            if key in allowed_configs:
+                # 检查配置项类型是否正确
+                if isinstance(value, allowed_configs[key]):
+                    # 更新配置项
+                    setattr(config, key, value)
+                    updated_configs.append(key)
+                else:
+                    invalid_configs.append(f"{key}(类型错误)")
+            else:
+                invalid_configs.append(key)
+                
+        # 构造响应消息
+        message_parts = []
+        if updated_configs:
+            message_parts.append(f"成功更新配置项: {', '.join(updated_configs)}")
+        if invalid_configs:
+            message_parts.append(f"无效配置项: {', '.join(invalid_configs)}")
+            
+        return jsonify({
+            "success": True,
+            "message": "; ".join(message_parts),
+            "updated_configs": updated_configs,
+            "invalid_configs": invalid_configs
+        })
+        
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "message": f"更新配置时出错: {str(e)}"
+        }), 500
+
+
+@app.route('/config', methods=['GET'])
+def get_config():
+    """
+    获取当前配置参数
+    
+    Returns:
+        JSON格式的所有配置项
+    """
+    try:
+        import config
+        import inspect
+        
+        # 定义允许通过API获取的配置项
+        allowed_configs = {
+            "HIGH_MATCHING_CANDIDATE_RESOURCE_COUNT": int,
+            "RECOMMEND_USED_RESOURCES": int,
+            "USED_MODEL": str,
+            "DEFAULT_TRAIN_NUM": int,
+            "BATCH_SIZE": int,
+            "EMBEDDING_DIM": int,
+            "DNN_HIDDEN": list,
+            "DROPOUT": float,
+            "EPOCHS": int,
+            "LR": float
+        }
+        
+        # 获取config模块中允许的配置项
+        config_items = {}
+        for name, value in inspect.getmembers(config):
+            if not name.startswith('__') and name.isupper() and name in allowed_configs:
+                config_items[name] = value
+                
+        return jsonify({
+            "success": True,
+            "data": config_items
+        })
+        
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "message": f"获取配置时出错: {str(e)}"
+        }), 500
+
+
+@app.route('/config/export', methods=['GET'])
+def export_config():
+    """
+    导出当前配置到文件
+    
+    Returns:
+        JSON格式的配置数据
+    """
+    try:
+        from config_manager import export_current_config
+        
+        config_data = export_current_config()
+        
+        # 定义允许通过API导出的配置项
+        allowed_configs = {
+            "HIGH_MATCHING_CANDIDATE_RESOURCE_COUNT": int,
+            "RECOMMEND_USED_RESOURCES": int,
+            "USED_MODEL": str,
+            "DEFAULT_TRAIN_NUM": int,
+            "BATCH_SIZE": int,
+            "EMBEDDING_DIM": int,
+            "DNN_HIDDEN": list,
+            "DROPOUT": float,
+            "EPOCHS": int,
+            "LR": float
+        }
+        
+        # 过滤配置项
+        filtered_config_data = {
+            key: value for key, value in config_data.items() 
+            if key in allowed_configs
+        }
+        
+        return jsonify({
+            "success": True,
+            "data": filtered_config_data
+        })
+        
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "message": f"导出配置时出错: {str(e)}"
+        }), 500
+
+
+@app.route('/config/import', methods=['POST'])
+def import_config():
+    """
+    从文件导入配置
+    
+    Returns:
+        JSON格式的响应结果
+    """
+    try:
+        # 获取请求中的JSON数据
+        data = request.get_json()
+        
+        if not data:
+            return jsonify({
+                "success": False,
+                "message": "请求体必须包含JSON数据"
+            }), 400
+            
+        # 定义允许通过API导入的配置项
+        allowed_configs = {
+            "HIGH_MATCHING_CANDIDATE_RESOURCE_COUNT": int,
+            "RECOMMEND_USED_RESOURCES": int,
+            "USED_MODEL": str,
+            "DEFAULT_TRAIN_NUM": int,
+            "BATCH_SIZE": int,
+            "EMBEDDING_DIM": int,
+            "DNN_HIDDEN": list,
+            "DROPOUT": float,
+            "EPOCHS": int,
+            "LR": float
+        }
+            
+        # 检查是否提供了配置文件路径
+        config_file = data.get('config_file')
+        if config_file:
+            # 从文件加载配置
+            from config_manager import apply_config_from_file
+            if apply_config_from_file(config_file):
+                return jsonify({
+                    "success": True,
+                    "message": f"成功从文件 {config_file} 导入配置"
+                })
+            else:
+                return jsonify({
+                    "success": False,
+                    "message": f"从文件 {config_file} 导入配置失败"
+                }), 500
+        else:
+            # 直接使用请求中的配置数据
+            # 过滤允许的配置项
+            filtered_data = {
+                key: value for key, value in data.items() 
+                if key in allowed_configs and isinstance(value, allowed_configs[key])
+            }
+            
+            if not filtered_data:
+                return jsonify({
+                    "success": False,
+                    "message": "没有提供有效的配置项"
+                }), 400
+            
+            from config_manager import update_runtime_config
+            update_runtime_config(filtered_data)
+            
+            return jsonify({
+                "success": True,
+                "message": "成功导入配置",
+                "imported_configs": list(filtered_data.keys())
+            })
+        
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "message": f"导入配置时出错: {str(e)}"
+        }), 500
+
+
+@app.route('/models', methods=['GET'])
+def list_models():
+    """
+    获取models目录下所有.pth模型文件的文件名列表
+    
+    Returns:
+        JSON格式的模型文件名列表
+    """
+    try:
+        # 获取项目根目录
+        base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '.'))
+        # 构造models目录路径
+        models_dir = os.path.join(base_dir, TRAINING_MODELS_DIR)
+        
+        # 检查models目录是否存在
+        if not os.path.exists(models_dir):
+            return jsonify({
+                "success": False,
+                "message": f"模型目录 {models_dir} 不存在"
+            }), 404
+        
+        # 查找所有.pth文件
+        pattern = os.path.join(models_dir, "*.pth")
+        model_files = glob.glob(pattern)
+        
+        # 提取文件名（不含路径）
+        model_names = [os.path.basename(f) for f in model_files]
+        # 按文件名排序
+        model_names.sort()
+        
+        return jsonify({
+            "success": True,
+            "data": model_names,
+            "count": len(model_names)
+        })
+        
+    except Exception as e:
+        return jsonify({
+            "success": False,
+            "message": f"获取模型文件列表时出错: {str(e)}"
         }), 500
 
 

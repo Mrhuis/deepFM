@@ -1,0 +1,51 @@
+{
+    "DB_CONFIG": {
+        "host": "localhost",
+        "database": "lrp",
+        "user": "root",
+        "password": "13579"
+    },
+    "TRAINING_SETS_DIR": "trainingSets",
+    "TRAINING_MODELS_DIR": "models",
+    "MODEL_CONFIG_DIR": "featureInfoConfigs",
+    "USER_FEATURE_DIR": "userFeatures",
+    "CONTENT_FEATURE_DIR": "contentFeatures",
+    "USER_RECOMMEND_RESOURCE_DIR": "userRecommendResources",
+    "HIGH_MATCHING_CANDIDATE_RESOURCE_COUNT": 50,
+    "RECOMMEND_USED_RESOURCES": -1,
+    "USED_MODEL": "DEFAULT",
+    "CONTINUOUS_COLS": [
+        "knowledge_accuracy",
+        "knowledge_total_count",
+        "resource_preference",
+        "post_3d_correct_rate",
+        "post_practice_count",
+        "watch_rate",
+        "active_days",
+        "resource_time"
+    ],
+    "CATEGORICAL_COLS": [
+        "resource_form",
+        "resource_knowledges",
+        "resource_tags",
+        "is_first_submit_24h",
+        "is_complete",
+        "is_correct",
+        "is_view_analysis",
+        "is_pause",
+        "is_replay"
+    ],
+    "TARGET_COL": "correct_rate_change",
+    "DEFAULT_TRAIN_NUM": 2000,
+    "BATCH_SIZE": 32,
+    "EMBEDDING_DIM": 16,
+    "DNN_HIDDEN": [
+        128,
+        64,
+        32
+    ],
+    "DROPOUT": 0.2,
+    "EPOCHS": 50,
+    "LR": 0.001,
+    "DEVICE": "cuda"
+}

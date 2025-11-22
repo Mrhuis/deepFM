@@ -1,0 +1,302 @@
+[
+  {
+    "resource_key": "C07_17",
+    "form_type": 6,
+    "correct_rate_change": -0.0847904682159425,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C07_19",
+    "form_type": 6,
+    "correct_rate_change": -0.0847904682159425,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_19",
+    "form_type": 6,
+    "correct_rate_change": -0.15539932250976574,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C07_10",
+    "form_type": 1,
+    "correct_rate_change": -0.18374133110046398,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C07_6",
+    "form_type": 1,
+    "correct_rate_change": -0.18374133110046398,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C06_18",
+    "form_type": 6,
+    "correct_rate_change": -0.1871265769004823,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_bst_cpp_memory",
+    "form_type": 7,
+    "correct_rate_change": -0.19602197408676159,
+    "is_use": 0
+  },
+  {
+    "resource_key": "M_stack_expression_concept",
+    "form_type": 7,
+    "correct_rate_change": -0.1966823935508729,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C08_18",
+    "form_type": 5,
+    "correct_rate_change": -0.21861332654953014,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C05_17",
+    "form_type": 6,
+    "correct_rate_change": -0.2188571095466615,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_17",
+    "form_type": 4,
+    "correct_rate_change": -0.22408413887023937,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_4",
+    "form_type": 1,
+    "correct_rate_change": -0.23679423332214367,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_5",
+    "form_type": 1,
+    "correct_rate_change": -0.23679423332214367,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_12",
+    "form_type": 1,
+    "correct_rate_change": -0.23679423332214367,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_15",
+    "form_type": 1,
+    "correct_rate_change": -0.23679423332214367,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_3",
+    "form_type": 1,
+    "correct_rate_change": -0.23679423332214367,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_15",
+    "form_type": 1,
+    "correct_rate_change": -0.23679423332214367,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C07_15",
+    "form_type": 1,
+    "correct_rate_change": -0.23679423332214367,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_12",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_2",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_6",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_7",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_11",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_13",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_5",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_11",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_12",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_14",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_4",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_5",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_7",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_9",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C07_3",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C07_4",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C07_7",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C08_8",
+    "form_type": 1,
+    "correct_rate_change": -0.23679482936859142,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_1",
+    "form_type": 1,
+    "correct_rate_change": -0.23679542541503917,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_11",
+    "form_type": 1,
+    "correct_rate_change": -0.23679542541503917,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C02_15",
+    "form_type": 1,
+    "correct_rate_change": -0.23679542541503917,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_4",
+    "form_type": 1,
+    "correct_rate_change": -0.23679542541503917,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_10",
+    "form_type": 1,
+    "correct_rate_change": -0.23679542541503917,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_13",
+    "form_type": 1,
+    "correct_rate_change": -0.23679542541503917,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_2",
+    "form_type": 1,
+    "correct_rate_change": -0.23679542541503917,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_6",
+    "form_type": 1,
+    "correct_rate_change": -0.23679542541503917,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C08_15",
+    "form_type": 1,
+    "correct_rate_change": -0.23679542541503917,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C07_8",
+    "form_type": 1,
+    "correct_rate_change": -0.2367963194847108,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C08_12",
+    "form_type": 1,
+    "correct_rate_change": -0.23679691553115856,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C03_9",
+    "form_type": 1,
+    "correct_rate_change": -0.2367978096008302,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C04_8",
+    "form_type": 1,
+    "correct_rate_change": -0.2367978096008302,
+    "is_use": 0
+  },
+  {
+    "resource_key": "C08_10",
+    "form_type": 1,
+    "correct_rate_change": -0.2367978096008302,
+    "is_use": 0
+  }
+]

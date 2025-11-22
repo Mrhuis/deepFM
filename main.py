@@ -1,6 +1,8 @@
 import time
 from datetime import datetime
 import logging
+import argparse
+import os
 
 # 设置日志记录
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -89,11 +91,99 @@ def schedule_daily_task():
         # 执行任务
         run_daily_pipeline()
 
+def parse_arguments():
+    """
+    解析命令行参数并更新配置
+    """
+    parser = argparse.ArgumentParser(description='推荐系统主程序')
+    
+    # 数据配置参数
+    parser.add_argument('--train-num', type=int, help='训练数据条数')
+    parser.add_argument('--batch-size', type=int, help='批次大小')
+    
+    # 模型配置参数
+    parser.add_argument('--embedding-dim', type=int, help='类别特征嵌入维度')
+    parser.add_argument('--dnn-hidden', nargs='+', type=int, help='隐藏层结构')
+    parser.add_argument('--dropout', type=float, help='Dropout比例')
+    
+    # 训练配置参数
+    parser.add_argument('--epochs', type=int, help='训练轮数')
+    parser.add_argument('--lr', type=float, help='学习率')
+    
+    # 其他配置参数
+    parser.add_argument('--high-matching-count', type=int, help='高匹配备选资源个数')
+    parser.add_argument('--recommend-used-resources', type=int, choices=[-1, 0, 1], 
+                        help='是否推荐使用过后的资源 -1: 不使用过, 0: 无限制, 1: 使用过')
+    parser.add_argument('--used-model', type=str, help='使用的模型')
+    
+    # 配置文件选项
+    parser.add_argument('--config-file', type=str, help='配置文件路径')
+    
+    # 运行选项
+    parser.add_argument('--mode', choices=['once', 'schedule'], default='once',
+                        help='运行模式: once(执行一次后退出), schedule(按计划执行)')
+    
+    return parser.parse_args()
+
+def update_config_with_args(args):
+    """
+    根据命令行参数更新配置
+    """
+    import config
+    
+    # 如果指定了配置文件，优先从文件加载
+    if args.config_file and os.path.exists(args.config_file):
+        try:
+            from config_manager import apply_config_from_file
+            if apply_config_from_file(args.config_file):
+                print(f"已从配置文件 {args.config_file} 加载配置")
+        except ImportError:
+            print("警告: config_manager 模块不可用，无法加载配置文件")
+        except Exception as e:
+            print(f"警告: 从配置文件加载配置失败: {e}")
+    
+    # 更新数据配置
+    if args.train_num is not None:
+        config.DEFAULT_TRAIN_NUM = args.train_num
+    if args.batch_size is not None:
+        config.BATCH_SIZE = args.batch_size
+    
+    # 更新模型配置
+    if args.embedding_dim is not None:
+        config.EMBEDDING_DIM = args.embedding_dim
+    if args.dnn_hidden is not None:
+        config.DNN_HIDDEN = args.dnn_hidden
+    if args.dropout is not None:
+        config.DROPOUT = args.dropout
+    
+    # 更新训练配置
+    if args.epochs is not None:
+        config.EPOCHS = args.epochs
+    if args.lr is not None:
+        config.LR = args.lr
+    
+    # 更新其他配置
+    if args.high_matching_count is not None:
+        config.HIGH_MATCHING_CANDIDATE_RESOURCE_COUNT = args.high_matching_count
+    if args.recommend_used_resources is not None:
+        config.RECOMMEND_USED_RESOURCES = args.recommend_used_resources
+    if args.used_model is not None:
+        config.USED_MODEL = args.used_model
+
 if __name__ == "__main__":
+    # 解析命令行参数
+    args = parse_arguments()
+    
+    # 根据参数更新配置
+    update_config_with_args(args)
+    
     # 立即执行一次任务
     logger.info("立即执行一次推荐系统流水线任务")
     run_daily_pipeline()
     
-    # 启动定时任务
-    logger.info("启动定时任务调度器")
-    schedule_daily_task()
+    # 根据模式决定是否启动定时任务
+    if args.mode == 'schedule':
+        logger.info("启动定时任务调度器")
+        schedule_daily_task()
+    else:
+        logger.info("程序执行完毕，退出")
