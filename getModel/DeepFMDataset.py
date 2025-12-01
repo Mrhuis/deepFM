@@ -22,6 +22,7 @@ class DeepFMDataset(torch.utils.data.Dataset):
         target_folder_path = os.path.join(base_dir, csv_path)
         full_csv_path = os.path.join(target_folder_path, csv_filename)
 
+        # 取前指定条数据作为训练集，read_csv将会返回一个类似表格型的数据结构。
         self.df = pd.read_csv(full_csv_path, sep="|", dtype=str)
         if train_num is not None and train_num < len(self.df):
             self.df = self.df.head(train_num)
@@ -45,17 +46,23 @@ class DeepFMDataset(torch.utils.data.Dataset):
         self.continuous_std = []   # 保存每列的标准差
         
         for col in CONTINUOUS_COLS:
-            # 取出二维数组中的一列数据为一维数组By列名
+            # 从表格型的数据结构df中取出的一列数据为一维数组By列名
+            # 讲col对应的列表都从一维数组，变成二维数组
             col_data = self.df[col].fillna("").apply(
+                # 一个col对应一种连续特征，一个种连续特征中有多个值
                 # TODO:处理一维数组的每个元素（字符串"XX，XX，XX...."），把其变成数组，并整体把非空值向左对齐，如果中间有空值
                 lambda x: [float(val) for val in x.split(",") if val.strip()] if x.strip() else []
             )
-            # 把表示此列的二维数组的每一行的长度进行查看，迭代出最长值。
+            # 把表示此二维列表的每行里面所含元素的长度进行查看，迭代出这二维数组的行最宽宽度。
             max_len = max(len(vals) for vals in col_data) if col_data.any() else 1
-            # 对表示此列的二维数组的每一行进行追平，以最长行为目标，尾部加0.0，最后赋给np列表
+            # 对该列所有单元中的元素进行追平，以最长行为目标，尾部加0.0，最后赋给np列表
+            # 把二维列表变成一个长方形（包含正方形）
+            # 为了占用更少的内存，向量化操作，不需要循环，高效计算。
             padded = np.array([vals + [0.0] * (max_len - len(vals)) for vals in col_data])
             
             # 计算并保存均值和标准差
+            # 计算并保存的是一种连续特征的均值（内部包含多个子连续特征）和标准差
+            # 直接计算整个矩阵的均值和标准差
             col_mean = padded.mean()
             col_std = padded.std()
             # 向全局属性中追加均值和标准差
@@ -69,7 +76,7 @@ class DeepFMDataset(torch.utils.data.Dataset):
             else:
                 padded = (padded - col_mean) / col_std
             continuous_list.append(padded)
-        # 水平矩阵拼接
+        # 水平矩阵拼接每一列的对应行单元的元素
         continuous_matrix = np.hstack(continuous_list)
 
         # 2. 处理类别特征
@@ -128,6 +135,8 @@ class DeepFMDataset(torch.utils.data.Dataset):
         """处理目标变量"""
 
         # 第三方库列表数据类型装第三方库np的列表数据类型
+        #  x.strip() 用于检查字符串是否为空或只包含空白字符
+        # .values：将pandas Series转换为NumPy数组
         # 把一维数组变成二维数组
         target_data = self.df[TARGET_COL].fillna("0").apply(
             lambda x: float(x) if x.strip() else 0.0

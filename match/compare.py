@@ -18,9 +18,12 @@ class ModelPredictor:
         Args:
             model_path: 训练好的模型文件路径
         """
+        # 1.加载数据集数据->模型输入数据过程中的数据处理协助数据
+        # 1-1.从指定数据文件中加载协助数据
         # 从特征信息文件中加载特征维度信息
         current_date = datetime.now().strftime("%Y%m%d")  # 格式化日期为"YYYYMMDD"
         feature_info_filename = f"{current_date}.json"  # 构造json文件名
+        # 获取当前文件路径的上级路径的绝对路径。
         base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
         target_folder_path = os.path.join(base_dir, MODEL_CONFIG_DIR)
         feature_info_path = os.path.join(target_folder_path, feature_info_filename)
@@ -31,13 +34,16 @@ class ModelPredictor:
                 feature_info = json.load(f)
             self.cat_dims = feature_info["cat_dims"]
             self.continuous_dim = feature_info["continuous_dim"]
+            # 预加载
             # 加载训练时目标变量的最值信息
             self.target_min = feature_info.get("target_min", -1.0)
             self.target_max = feature_info.get("target_max", 1.0)
+            # 预加载
             # 加载训练时连续特征的均值和标准差
             self.continuous_mean = feature_info.get("continuous_mean", None)
             self.continuous_std = feature_info.get("continuous_std", None)
         else:
+            # 1-2.指定的没有，加载最新生成的协助数据
             # 如果特征信息文件不存在，查找最新的特征文件
             feature_files = glob.glob(os.path.join(target_folder_path, "*.json"))
             if feature_files:
@@ -55,6 +61,7 @@ class ModelPredictor:
                 self.continuous_mean = feature_info.get("continuous_mean", None)
                 self.continuous_std = feature_info.get("continuous_std", None)
             else:
+                # 1-3.最新的也没有，加载默认的协助数据
                 # 如果没有任何特征信息文件，使用默认值并给出警告
                 print("警告：未找到任何特征信息文件，使用默认配置")
                 self.cat_dims = {
@@ -75,7 +82,9 @@ class ModelPredictor:
                 # 没有保存的统计信息
                 self.continuous_mean = None
                 self.continuous_std = None
-        
+
+
+        # 2.初始化模型
         # 初始化模型
         self.model = DeepFM(
             continuous_dim=self.continuous_dim,
@@ -84,10 +93,12 @@ class ModelPredictor:
             DNN_HIDDEN=DNN_HIDDEN,
             DROPOUT=DROPOUT
         ).to(DEVICE)
-        
+
+        # 3.加载模型
         # 加载预训练模型权重
         # 如果没有提供模型路径，则尝试使用默认路径
         if not model_path:
+            #3-1.如果是默认，则使用最新模型权重
             # 检查USED_MODEL配置
             if USED_MODEL == "DEFAULT":
                 # 保持原有逻辑
@@ -95,21 +106,25 @@ class ModelPredictor:
                 model_dir = os.path.join(base_dir, TRAINING_MODELS_DIR)
                 model_path = os.path.join(model_dir, model_filename)
             else:
+                # 3-2.不是默认，使用指定的模型名称
                 # 使用USED_MODEL作为文件名
                 model_filename = f"{USED_MODEL}.pth"
                 model_dir = os.path.join(base_dir, TRAINING_MODELS_DIR)
                 model_path = os.path.join(model_dir, model_filename)
             
         if os.path.exists(model_path):
+            # 4.加载模型
             self.load_model(model_path)
         else:
             print(f"警告：未找到模型文件 {model_path}，将在 {TRAINING_MODELS_DIR} 目录中查找最新模型...")
             # 在模型目录中查找最新日期命名的模型文件
+            # 查找指定目录下符合模式的所有文件，*.pth: 通配符模式，匹配所有以 .pth 结尾的文件
             model_files = glob.glob(os.path.join(model_dir, "*.pth"))
             if model_files:
                 # 按文件名排序，获取最新的模型文件
                 latest_model_file = max(model_files, key=os.path.getctime)
                 print(f"使用最新模型文件: {latest_model_file}")
+                # 4.加载模型
                 self.load_model(latest_model_file)
             else:
                 print(f"警告：{TRAINING_MODELS_DIR} 目录中未找到任何模型文件，将使用随机初始化的模型权重")
@@ -121,7 +136,9 @@ class ModelPredictor:
         Args:
             model_path: 模型文件路径
         """
+        # 加载模型权重
         self.model.load_state_dict(torch.load(model_path, map_location=DEVICE, weights_only=True))
+        # 启动模型的评估模式
         self.model.eval()
     
     def predict(self, training_set: TrainingSet) -> float:
@@ -189,6 +206,7 @@ class ModelPredictor:
         """
         # 处理连续特征
         # 根据模型期望的维度(continuous_dim)来构造输入特征
+        # 创建列表
         continuous_features_by_col = []
         
         for col in CONTINUOUS_COLS:
@@ -208,6 +226,7 @@ class ModelPredictor:
                 if self.continuous_mean is not None and self.continuous_std is not None and col_idx < len(self.continuous_mean):
                     mean = self.continuous_mean[col_idx]
                     std = self.continuous_std[col_idx]
+                    # 训练集的特征处理
                     # 如果标准差为0，说明该列所有值相同，不需要归一化，直接减去均值
                     if std == 0:
                         normalized_val = val - mean
@@ -227,11 +246,18 @@ class ModelPredictor:
             normalized_features = normalized_features[:self.continuous_dim]
         
         # 转换为张量
+        # 通过NumPy作为中间步骤更加稳定可靠
+        # 某些版本的PyTorch可能对直接从Python列表创建张量支持不完整
+        # 从NumPy数组创建张量更可靠且性能更好，NumPy提供了更好的数值错误检测和处理机制
+        # 因为Pytorch只能接收张量作为输入，所以需要将数据转换为张量
+        # unsqueeze(0)下标为0处添加batch维度，使数据形状符合模型期望的[batch_size, features]格式
+        # 它会自己判断自动判断 batch_size是多少（这里根据数据数）
         continuous_array = np.array(normalized_features, dtype=np.float32)
         continuous_tensor = torch.tensor(continuous_array, dtype=torch.float32, device=DEVICE).unsqueeze(0)
         
         # 处理类别特征
         # 模型期望每个类别特征的形状为 [BATCH_SIZE, feature_len]，这里BATCH_SIZE为1
+        # 创建字典
         categorical_dict = {}
         for col in CATEGORICAL_COLS:
             value = getattr(training_set, col, 0)
@@ -244,6 +270,7 @@ class ModelPredictor:
                     categorical_dict[col] = torch.from_numpy(np_array).unsqueeze(0).to(DEVICE)
                 else:
                     # 空列表用0填充
+                    # [[]]的原因是英文形状为[1,len(value)]
                     categorical_dict[col] = torch.tensor([[0]], dtype=torch.long, device=DEVICE)
             else:
                 # 单个值需要扩展为二维张量 [1, 1]
@@ -263,5 +290,7 @@ def predict_correct_rate_change(training_set: TrainingSet, model_path: str = Non
     Returns:
         float: 预测的 correct_rate_change 值，在-1到1范围内
     """
+    # 创建当前类
     predictor = ModelPredictor(model_path)
+    # 调用当前类的预测方法
     return predictor.predict(training_set)

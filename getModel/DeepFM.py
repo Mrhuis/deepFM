@@ -141,7 +141,9 @@ class DeepFM(nn.Module):
             if torch.any(categorical[col] < 0):
                 min_index = torch.min(categorical[col]).item()
                 raise ValueError(f"类别特征 '{col}' 包含负数索引: {min_index}")
-            
+
+            # categorical[]里面装的是某资源所属类别的索引
+            # 查找每个较大类别中的小种类的权重张量
             cat_emb = self.categorical_first[col](categorical[col])
             # 步骤2：在特征长度维度（dim=1）求和，压缩为[batch, 1]
             cat_sum = torch.sum(cat_emb, dim=1)  # 关键修正：求和后形状[batch, 1]
@@ -167,8 +169,10 @@ class DeepFM(nn.Module):
                 raise ValueError(f"类别特征 '{col}' 包含负数索引: {min_index}")
             
             # 嵌入输出形状[batch, feature_len, EMBEDDING_DIM]
+            # categorical[]里面装的是某资源所属类别的索引
             emb = self.categorical_embedding[col](categorical[col])
             # 在特征长度维度求和，压缩为[batch, EMBEDDING_DIM]
+            # 将相对大的类别特征底下的子种类的权重张量进行求和，得到该类别特征表示张量。
             emb_sum = torch.sum(emb, dim=1)  # 形状[batch, EMBEDDING_DIM]
             cat_emb_list.append(emb_sum)
 
@@ -177,7 +181,7 @@ class DeepFM(nn.Module):
             fm2_out = torch.zeros((BATCH_SIZE, 1), device=DEVICE)
         else:
             # 堆叠所有类别特征的嵌入向量：[batch, num_cat, EMBEDDING_DIM]
-            # 将多个类别特征嵌入向量堆叠在一起，用一个三维张量表示。
+            # 将多个类别特征嵌入向量堆叠在一起，用一个三维张量表示。（为了保持各特征的独特性，不能丢失他们的独有属性所以不能sum）
             cat_emb_stack = torch.stack(cat_emb_list, dim=1)
             # FM二阶公式：0.5 * sum[(sum(emb))² - sum(emb²)]
             # 将这个代表所有类别特征总和的三维张量压缩成二维张量表示，用于计算FM二阶。
